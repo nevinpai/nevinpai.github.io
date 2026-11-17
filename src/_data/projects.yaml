@@ -1,0 +1,21 @@
+# kind: research | personal     (the two groups on the Projects page)
+# featured: true                also shows the project on the home page
+# image: /assets/img/...        optional
+# links:                        any labels you like
+
+- name: "Placeholder research project"
+  kind: research
+  year: 2026
+  featured: true
+  description: One or two sentences on the question, what you built, and what you found.
+  links:
+    code: "#"
+    writeup: "#"
+
+- name: "Placeholder personal project"
+  kind: personal
+  year: 2025
+  featured: true
+  description: Something you made for its own sake. Say what it does and why you made it.
+  links:
+    site: "#"

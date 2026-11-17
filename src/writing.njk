@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: Writing
+description: Notes and essays.
+---
+{% import "macros.njk" as m %}
+
+<h1>{{ title }}</h1>
+
+{% for group in collections.postsByYear %}
+<section class="year">
+  <h2>{{ group.year }}</h2>
+  <ul class="entries">
+    {% for post in group.posts %}{{ m.postLine(post) }}{% endfor %}
+  </ul>
+</section>
+{% else %}
+<p class="empty">Nothing here yet.</p>
+{% endfor %}

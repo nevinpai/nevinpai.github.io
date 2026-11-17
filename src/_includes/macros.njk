@@ -1,0 +1,40 @@
+{% macro links(map) %}
+  {%- if map -%}
+    <span class="entry-links">
+      {%- for label, url in map %}<a href="{{ url }}">{{ label }}</a>{% endfor -%}
+    </span>
+  {%- endif -%}
+{% endmacro %}
+
+{% macro publication(p, me) %}
+<li class="entry">
+  <div class="entry-title">{{ p.title }}</div>
+  <div class="entry-meta">
+    {%- for a in p.authors -%}
+      {%- if a == me %}<span class="me">{{ a }}</span>{% else %}{{ a }}{% endif -%}
+      {%- if not loop.last %}, {% endif -%}
+    {%- endfor -%}
+  </div>
+  <div class="entry-meta">
+    <cite>{{ p.venue }}</cite>{% if p.note %}, {{ p.note | lower }}{% endif %}
+    {{ links(p.links) }}
+  </div>
+</li>
+{% endmacro %}
+
+{% macro project(p) %}
+<li class="entry">
+  {% if p.image %}<img class="entry-image" src="{{ p.image }}" alt="" loading="lazy">{% endif %}
+  <div class="entry-title">{{ p.name }}</div>
+  <p class="entry-text">{{ p.description }}</p>
+  <div class="entry-meta">{{ p.year }} {{ links(p.links) }}</div>
+</li>
+{% endmacro %}
+
+{% macro postLine(post) %}
+<li class="post-line">
+  <time datetime="{{ post.date | dateISO }}">{{ post.date | dateLong }}</time>
+  <a class="entry-title" href="{{ post.url }}">{{ post.data.title }}</a>
+  {% if post.data.description %}<p class="entry-text">{{ post.data.description }}</p>{% endif %}
+</li>
+{% endmacro %}

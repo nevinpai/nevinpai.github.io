@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="{{ site.name }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="side">
+      <a class="portrait-link" href="/" aria-label="Home">
+        {%- if site.portrait %}
+        <img class="portrait" src="{{ site.portrait }}" alt="Portrait of {{ site.name }}">
+        {%- else %}
+        <span class="portrait placeholder">Your photo<br><small>set <code>portrait</code> in site.yaml</small></span>
+        {%- endif %}
+      </a>
+      <div class="identity">
+        <a class="site-name" href="/">{{ site.name }}</a>
+        {% if site.role %}<p class="role">{{ site.role }}</p>{% endif %}
+      </div>
+      <nav class="nav" aria-label="Main">
+        <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>About</a>
+        {%- for item in site.nav %}
+        <a href="{{ item.url }}"{% if page.url and item.url in page.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {%- endfor %}
+        {%- if site.cv %}
+        <a href="{{ site.cv }}">CV</a>
+        {%- endif %}
+      </nav>
+      <ul class="contact">
+        {% if site.email %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+        {% for link in site.links %}<li><a href="{{ link.url }}" rel="me">{{ link.label }}</a></li>{% endfor %}
+      </ul>
+    </header>
+
+    <div class="content">
+      <main id="main">
+        {{ content | safe }}
+      </main>
+      <footer class="site-footer">
+        <span>© {{ site.name }}</span>
+        {%- set peptide = site.name | peptide %}
+        {%- if peptide %}
+        <span title="The letters of my name, read as amino acids">{{ peptide }}</span>
+        {%- endif %}
+        <a href="/feed.xml">RSS</a>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

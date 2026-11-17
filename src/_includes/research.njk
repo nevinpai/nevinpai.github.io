@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+{% import "macros.njk" as m %}
+
+<h1>{{ title }}</h1>
+<div class="prose">{{ content | safe }}</div>
+
+{% for group in publications | byYear %}
+<section class="year">
+  <h2>{{ group.year }}</h2>
+  <ol class="entries">
+    {% for p in group.entries %}{{ m.publication(p, site.name) }}{% endfor %}
+  </ol>
+</section>
+{% endfor %}

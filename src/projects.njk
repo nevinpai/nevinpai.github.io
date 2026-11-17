@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Projects
+description: Research and personal projects.
+---
+{% import "macros.njk" as m %}
+
+<h1>{{ title }}</h1>
+
+{% for kind, heading in { research: "Research", personal: "Personal" } %}
+{% set group = [] %}
+{% for p in projects %}{% if p.kind == kind %}{% set group = (group.push(p), group) %}{% endif %}{% endfor %}
+{% if group.length %}
+<section>
+  <div class="section-head"><h2>{{ heading }}</h2></div>
+  <ul class="entries tiles">
+    {% for p in group %}{{ m.project(p) }}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+{% import "macros.njk" as m %}
+
+<div class="prose lead">{{ content | safe }}</div>
+
+{% set selected = [] %}
+{% for p in publications %}{% if p.selected %}{% set selected = (selected.push(p), selected) %}{% endif %}{% endfor %}
+{% set featured = [] %}
+{% for p in projects %}{% if p.featured %}{% set featured = (featured.push(p), featured) %}{% endif %}{% endfor %}
+
+<div class="columns">
+  {% if selected.length %}
+  <section>
+    <div class="section-head"><h2>Selected research</h2><a href="/research/">All publications</a></div>
+    <ol class="entries">
+      {% for p in selected %}{{ m.publication(p, site.name) }}{% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  <div class="stack">
+    {% if featured.length %}
+    <section>
+      <div class="section-head"><h2>Projects</h2><a href="/projects/">All projects</a></div>
+      <ul class="entries">
+        {% for p in featured %}{{ m.project(p) }}{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    {% if collections.posts.length %}
+    <section>
+      <div class="section-head"><h2>Recent writing</h2><a href="/writing/">All writing</a></div>
+      <ul class="entries tight">
+        {% for post in collections.posts.slice(0, 4) %}
+        <li class="post-brief">
+          <a class="entry-title" href="{{ post.url }}">{{ post.data.title }}</a>
+          <time datetime="{{ post.date | dateISO }}">{{ post.date | dateLong }}</time>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </div>
+</div>
