@@ -10,7 +10,7 @@ layout: base.njk
 <section class="year">
   <h2>{{ group.year }}</h2>
   <ol class="entries">
-    {% for p in group.entries %}{{ m.publication(p, site.name) }}{% endfor %}
+    {% for p in group.entries %}{{ m.publication(p, site.author_names or [site.name]) }}{% endfor %}
   </ol>
 </section>
 {% endfor %}

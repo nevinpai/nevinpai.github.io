@@ -138,6 +138,7 @@ code { font-family: var(--mono); font-size: 0.85em; }
   font-size: 0.8125rem;
 }
 .site-footer a { color: inherit; }
+.site-footer a:hover { color: var(--ink); }
 
 /* ---- Sections ---- */
 
@@ -238,6 +239,8 @@ a.entry-title:hover { color: var(--link); text-decoration: underline; }
 .prose > :first-child { margin-top: 0; }
 .prose > :last-child { margin-bottom: 0; }
 .prose p, .prose ul, .prose ol { margin: 0 0 1rem; }
+.lead a { color: inherit; }
+.lead a:hover { color: var(--muted); }
 .lead { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); line-height: 1.45; max-width: 46rem; }
 
 .post-date { margin: 0 0 0.5rem; }

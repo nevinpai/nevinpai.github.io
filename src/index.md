@@ -2,9 +2,7 @@
 layout: home.njk
 ---
 
-This paragraph is your introduction, and it lives in `src/index.md`. Say who
-you are, where you work or study, and what you are trying to find out. Two or
-three sentences is plenty; the sections below carry the detail.
+I'm a junior at the University of Wisconsin–Madison. I'm currently working as
+an undergraduate researcher at the [Wayment-Steele lab](https://waymentsteelelab.org/).
 
-A second paragraph is a good place for what you are doing right now, or what
-you would like people to get in touch about.
+I plan to seek a PhD in bioengineering/biophysics after graduating.

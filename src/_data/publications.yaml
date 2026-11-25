@@ -1,31 +1,13 @@
 # One entry per paper, preprint, talk or poster. Order within a year is kept.
-# Your own name (as written in site.yaml) is emphasised automatically.
-#
-#   selected: true   also shows the entry on the home page
-#   note:            optional, e.g. "Oral presentation" or "Under review"
-#   links:           any labels you like
+# Your name is emphasised automatically (see `author_names` in site.yaml).
+# Examples with every field are in examples/publications.yaml.
 
-- title: "Placeholder: the title of your most recent paper"
-  authors: [Nevin Pai, A. Coauthor, B. Coauthor]
-  venue: Journal or conference
-  year: 2026
-  selected: true
-  links:
-    paper: "#"
-    code: "#"
-
-- title: "Placeholder: a preprint"
-  authors: [A. Coauthor, Nevin Pai]
+- title: Disentangling RNA evolution and thermodynamics in genomic language models
+  authors: [Yuchen Xu, Nevin N. Pai, Hannah K. Wayment-Steele]
   venue: bioRxiv
   year: 2026
   note: Preprint
   selected: true
   links:
-    preprint: "#"
-
-- title: "Placeholder: an earlier paper"
-  authors: [A. Coauthor, B. Coauthor, Nevin Pai]
-  venue: Workshop or journal
-  year: 2025
-  links:
-    paper: "#"
+    preprint: https://doi.org/10.64898/2026.05.28.728275
+    code: https://github.com/WaymentSteeleLab/Evo_or_Thermo

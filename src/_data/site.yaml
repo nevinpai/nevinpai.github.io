@@ -5,20 +5,23 @@ url: https://nevinpai.github.io  # your real address, used by the RSS feed
 description: Research and writing on machine learning and biology.
 
 # One line under your name, e.g. "PhD student, Some University".
-role: Machine learning and biology
+role: Undergraduate researcher, UW–Madison
 
 # Your picture. Put the file in src/assets/img/ and write its path here.
 portrait: "/assets/img/portrait.jpeg"                    # e.g. /assets/img/portrait.jpg
 cv: ""                          # e.g. /assets/cv.pdf  (adds a CV link to the menu)
-email: ""                       # shown under "Elsewhere" on the home page
+email: ""                       # shown in the sidebar
+
+# Spellings of your name to bold in author lists.
+author_names: [Nevin Pai, Nevin N. Pai]
 
 links:
   - label: GitHub
-    url: https://github.com/
+    url: https://github.com/nevinpai
   - label: Twitter
     url: https://x.com/nevinnpai
   - label: LinkedIn
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/nevinpai/
 
 nav:
   - label: Research

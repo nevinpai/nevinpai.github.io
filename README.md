@@ -12,7 +12,7 @@ npm run build    # writes the finished site to _site/
 
 | To add…            | Do this                                                                 |
 | ------------------ | ----------------------------------------------------------------------- |
-| A blog post        | New file in `src/posts/` named `YYYY-MM-DD-some-title.md` (copy the sample) |
+| A blog post        | New file in `src/posts/` named `YYYY-MM-DD-some-title.md` (see `examples/sample-post.md`) |
 | A publication      | New entry in `src/_data/publications.yaml`                               |
 | A project          | New entry in `src/_data/projects.yaml`                                   |
 | An image in a post | Put it in `src/assets/img/`, then `![description](/assets/img/name.png)` |
@@ -32,3 +32,6 @@ Your introduction is `src/index.md` and the research overview is
 `_site/` is plain HTML and can be hosted anywhere (GitHub Pages, Netlify,
 Cloudflare Pages). Set `url` in `src/_data/site.yaml` to your real address
 first so the RSS feed links are correct.
+
+Placeholder content from the original template is kept in `examples/` for
+reference. It is not part of the built site.
