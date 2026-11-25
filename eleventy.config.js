@@ -15,6 +15,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml,yml", (contents) => yaml.load(contents));
   eleventyConfig.amendLibrary("md", (md) => md.use(footnote));
 
+  // Changes on every build, so browsers fetch the new stylesheet after a deploy.
+  eleventyConfig.addGlobalData("buildId", () => Date.now().toString(36));
+
   eleventyConfig.addPassthroughCopy("src/assets");
 
   // Posts with `draft: true` show up in `npm start` but are left out of `npm run build`.

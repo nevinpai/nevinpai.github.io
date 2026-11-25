@@ -5,7 +5,7 @@ url: https://nevinpai.github.io  # your real address, used by the RSS feed
 description: Research and writing on machine learning and biology.
 
 # One line under your name, e.g. "PhD student, Some University".
-role: Undergraduate researcher, UW–Madison
+role: ML for protein biology
 
 # Your picture. Put the file in src/assets/img/ and write its path here.
 portrait: "/assets/img/portrait.jpeg"                    # e.g. /assets/img/portrait.jpg

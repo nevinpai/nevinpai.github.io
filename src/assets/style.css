@@ -191,7 +191,7 @@ a.entry-title:hover { color: var(--link); text-decoration: underline; }
   line-height: 1.4;
 }
 .entry-meta { color: var(--muted); }
-.entry-meta .me { color: var(--ink); font-weight: 700; }
+.entry-meta .me { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
 .entry-links a { margin-left: 0.6rem; }
 .entry-image {
   display: block;
@@ -244,6 +244,7 @@ a.entry-title:hover { color: var(--link); text-decoration: underline; }
 .lead { font-size: clamp(1.125rem, 1.6vw, 1.3125rem); line-height: 1.45; max-width: 46rem; }
 
 .post-date { margin: 0 0 0.5rem; }
+.post-sub { margin: -0.6rem 0 1.75rem; color: var(--muted); font-size: 1.1875rem; }
 .post .prose { font-size: 1.125rem; line-height: 1.6; }
 .post .back { margin-top: 3rem; font-size: 0.9375rem; }
 
